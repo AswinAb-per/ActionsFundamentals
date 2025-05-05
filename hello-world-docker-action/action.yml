@@ -1,0 +1,20 @@
+name: Docker Action Test
+description: 'Test Docker action'
+
+inputs:
+  who-to-greet:
+    description: 'who to greet'
+    required: true
+    default: 'world'
+
+outputs:
+  time:
+    description: 'Time we said hello'
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+
+[skip ci]
