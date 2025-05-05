@@ -1,0 +1,18 @@
+name: Docker Actions Test
+description: 'Docker Actions Demo'
+
+inputs:
+  who-to-greet:
+    description: 'who to greet'
+    required: true
+    default: 'world'
+
+outpus:
+  time:
+    description: 'Time we said hello'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
